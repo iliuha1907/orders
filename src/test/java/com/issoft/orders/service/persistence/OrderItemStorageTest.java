@@ -19,10 +19,8 @@ public class OrderItemStorageTest {
         //given
         OrderItem orderItem = validOrderWithNotEmptyOrderItems("id").getItems()[0];
 
-        //when
-        final String id = orderItemStorage.persist(orderItem);
-
         //then
+        final String id = orderItemStorage.persist(orderItem);
         assertThat(id, is(not(null)));
     }
 

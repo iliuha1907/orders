@@ -21,10 +21,8 @@ public class OrderStorageTest {
         //given
         Order order = anyOrder();
 
-        //when
-        final String id = orderStorage.persist(order);
-
         //then
+        final String id = orderStorage.persist(order);
         assertThat(id, is(not(null)));
     }
 
@@ -40,10 +38,8 @@ public class OrderStorageTest {
         String userId = "id";
         List<Order> expectedOrders = Collections.singletonList(anyOrder());
 
-        //when
-        final List<Order> orders = orderStorage.loadAllByUserId(userId);
-
         //then
+        final List<Order> orders = orderStorage.loadAllByUserId(userId);
         assertThat(orders, is(not(null)));
         assertThat(orders, is(equalTo(expectedOrders)));
     }
